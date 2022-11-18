@@ -66,7 +66,7 @@ class AddItemFragment : Fragment() {
             binding.itemName.text.toString(),
             binding.itemPrice.text.toString(),
             binding.itemCount.text.toString(),
-            binding.TahunRilis.text.toString()
+            binding.itemCode1.text.toString()
         )
     }
 
@@ -79,7 +79,7 @@ class AddItemFragment : Fragment() {
             itemName.setText(item.itemName, TextView.BufferType.SPANNABLE)
             itemPrice.setText(price, TextView.BufferType.SPANNABLE)
             itemCount.setText(item.quantityInStock.toString(), TextView.BufferType.SPANNABLE)
-            TahunRilis.setText(item.year.toString(), TextView.BufferType.SPANNABLE)
+            itemCode1.setText(item.itemCode.toString(), TextView.BufferType.SPANNABLE)
             saveAction.setOnClickListener { updateItem() }
         }
     }
@@ -90,7 +90,7 @@ class AddItemFragment : Fragment() {
                 binding.itemName.text.toString(),
                 binding.itemPrice.text.toString(),
                 binding.itemCount.text.toString(),
-                binding.TahunRilis.text.toString(),
+                binding.itemCode1.text.toString(),
             )
             //val action untuk kembali le ItemListFragment
             val action = AddItemFragmentDirections.actionAddItemFragmentToItemListFragment()
@@ -105,7 +105,7 @@ class AddItemFragment : Fragment() {
                 this.binding.itemName.text.toString(),
                 this.binding.itemPrice.text.toString(),
                 this.binding.itemCount.text.toString(),
-                this.binding.TahunRilis.text.toString()
+                this.binding.itemCode1.text.toString()
             )
             val action = AddItemFragmentDirections.actionAddItemFragmentToItemListFragment()
             findNavController().navigate(action)

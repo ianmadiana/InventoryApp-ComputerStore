@@ -19,9 +19,9 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         itemName: String,
         itemPrice: String,
         itemCount: String,
-        itemRilis: String
+        itemCode: String
     ) {
-        val updatedItem = getUpdatedItemEntry(itemId, itemName, itemPrice, itemCount, itemRilis)
+        val updatedItem = getUpdatedItemEntry(itemId, itemName, itemPrice, itemCount, itemCode)
         updateItem(updatedItem)
     }
 
@@ -40,8 +40,8 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
     }
 
     //funtion public yang menggunakan 3 string untuk detail Item.
-    fun addNewItem(itemName: String, itemPrice: String, itemCount: String, itemRilis: String) {
-        val newItem = getNewItemEntry(itemName, itemPrice, itemCount, itemRilis)
+    fun addNewItem(itemName: String, itemPrice: String, itemCount: String, itemCode: String) {
+        val newItem = getNewItemEntry(itemName, itemPrice, itemCount, itemCode)
         insertItem(newItem)
     }
 
@@ -74,13 +74,13 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
             itemName = itemName,
             itemPrice = itemPrice.toDouble(),
             quantityInStock = itemCount.toInt(),
-            year = itemRilis.toInt()
+            itemCode = itemRilis.toInt()
         )
     }
 
 //funtion public yang menggunakan 3 string untuk detail Item.
-    fun isEntryValid(itemName: String, itemPrice: String, itemCount: String, itemRilis: String): Boolean {
-        if (itemName.isBlank() || itemPrice.isBlank() || itemCount.isBlank() || itemRilis.isBlank()) {
+    fun isEntryValid(itemName: String, itemPrice: String, itemCount: String, itemCode: String): Boolean {
+        if (itemName.isBlank() || itemPrice.isBlank() || itemCount.isBlank() || itemCode.isBlank()) {
             return false
         }
         return true
@@ -91,14 +91,14 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         itemName: String,
         itemPrice: String,
         itemCount: String,
-        itemRilis: String
+        itemCode: String
     ): Item {
         return Item(
             id = itemId,
             itemName = itemName,
             itemPrice = itemPrice.toDouble(),
             quantityInStock = itemCount.toInt(),
-            year = itemRilis.toInt()
+            itemCode = itemCode.toInt()
         )
     }
 }

@@ -22,6 +22,7 @@
     android:layout_margin="@dimen/margin"
     tools:context=".ItemListFragment">
 
+<!--    item name-->
     <TextView
         android:id="@+id/item_name"
         style="@style/Widget.Inventory.Header"
@@ -32,7 +33,9 @@
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+<!--    end of item name-->
 
+<!--    item price-->
     <TextView
         android:id="@+id/item_price"
         style="@style/Widget.Inventory.Header"
@@ -44,7 +47,9 @@
         app:layout_constraintEnd_toStartOf="@+id/item_quantity"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--   end of item price-->
 
+<!--    item quantity-->
     <TextView
         android:id="@+id/item_quantity"
         style="@style/Widget.Inventory.Header"
@@ -52,23 +57,26 @@
         android:layout_height="21dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="101dp"
-        android:text="@string/jumlah_barang"
+        android:text="@string/quantity"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/tahun_rilis"
+        app:layout_constraintEnd_toEndOf="@+id/item_code"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintTop_toTopOf="parent" />
+<!--    end of item quantity-->
 
+<!--    item code-->
     <TextView
-        android:id="@+id/tahun_rilis"
+        android:id="@+id/item_code"
         style="@style/Widget.Inventory.Header"
         android:layout_width="94dp"
         android:layout_height="32dp"
         android:layout_alignParentEnd="true"
-        android:text="@string/rilis"
+        android:text="@string/item_code"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintTop_toTopOf="parent" />
+<!--    end of item code-->
 
     <View
         android:id="@+id/divider"

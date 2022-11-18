@@ -86,8 +86,8 @@ class ItemDetailFragment : Fragment() {
             .setTitle(getString(android.R.string.dialog_alert_title))
             .setMessage(getString(R.string.delete_question))
             .setCancelable(false)
-            .setNegativeButton(getString(R.string.tidak)) { _, _ -> }
-            .setPositiveButton(getString(R.string.iya)) { _, _ ->
+            .setNegativeButton(getString(R.string.no)) { _, _ -> }
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 deleteItem()
             }
             .show()

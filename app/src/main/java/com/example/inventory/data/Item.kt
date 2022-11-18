@@ -21,8 +21,8 @@ data class Item (
     val itemPrice: Double,
     @ColumnInfo(name = "quantity")
     val quantityInStock: Int,
-    @ColumnInfo(name = "year")
-    val year: Int
+    @ColumnInfo(name = "item_code")
+    val itemCode: Int
 )
 
 //funtion untuk mengembalikan harga item yang diteruskan dalam

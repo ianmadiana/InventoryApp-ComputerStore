@@ -34,12 +34,13 @@
             app:layout_constraintTop_toBottomOf="@+id/item_count_label"
             tools:layout_editor_absoluteX="16dp" />
 
+<!--        item name-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/item_name_label"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="@string/judul_komik"
+            android:hint="@string/item_name"
             app:layout_constraintBottom_toTopOf="@+id/item_price_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,17 +49,19 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/item_name"
                 android:layout_width="match_parent"
-                android:layout_height="39dp"
+                android:layout_height="wrap_content"
                 android:inputType="textAutoComplete|textCapWords"
                 android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/item_price_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="1dp"
             android:hint="@string/item_price_req"
+            app:layout_constraintBottom_toTopOf="@+id/item_code"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_name_label"
@@ -72,32 +75,37 @@
                 android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--Tahun rilis-->
+<!--Kode barang-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tahun_rilis"
+            android:id="@+id/item_code"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/rilis_req"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:hint="@string/item_code_req"
+            app:layout_constraintBottom_toTopOf="@+id/item_count_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_price_label">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Tahun_rilis"
+                android:id="@+id/item_code1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="numberDecimal"
                 android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
+<!--        end of kode barang-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/item_count_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/stok_req"
+            android:layout_marginTop="8dp"
+            android:hint="@string/quantity"
+            app:layout_constraintBottom_toTopOf="@+id/item_count2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tahun_rilis">
+            app:layout_constraintTop_toBottomOf="@+id/item_code">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/item_count"
@@ -111,15 +119,18 @@
             android:id="@+id/simpan"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
             android:inputType="number"
             android:singleLine="true"
-            app:layout_constraintBottom_toBottomOf="@+id/save_action" />
+            app:layout_constraintBottom_toBottomOf="@+id/save_action"
+            app:layout_constraintTop_toBottomOf="@+id/item_count2" />
 
 
         <Button
             android:id="@+id/save_action"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
             android:text="@string/save_action"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

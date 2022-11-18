@@ -14,26 +14,28 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Gudang Komik</string>
-    <string name="jual">Jual</string>
-    <string name="stok">Stok Tersedia:</string>
-    <string name="stok_req">Masukan Jumlah barang <font color='#FF0000'>*</font></string>
-    <string name="judul_komik">Judul Komik <font color='#FF0000'>*</font></string>
-    <string name="item_price_req">Harga Komik <font color='#FF0000'>*</font></string>
+    <string name="app_name">Dragonmaid Computer</string>
+    <string name="sell">Jual</string>
+    <string name="quantity">Jumlah dalam persediaan:<font color='#FF0000'>*</font></string>
+    <string name="quantity_req">Masukkan jumlah barang<font color='#FF0000'>*</font></string>
+<!--    list item-->
+    <string name="item_name">Nama barang<font color='#FF0000'>*</font></string>
+    <string name="item_price_req">Harga barang<font color='#FF0000'>*</font></string>
     <string name="save_action">Simpan</string>
     <string name="item_detail_fragment_title">Item Details</string>
     <string name="add_fragment_title">Add Item</string>
     <string name="edit_fragment_title">Edit Item</string>
     <string name="harga">Harga</string>
-    <string name="rilis">Tahun Rilis</string>
-    <string name="rilis_req">Tahun Rilis</string>
-    <string name="jumlah_barang">Jumlah barang</string>
+<!--    item code-->
+    <string name="item_code">Kode Barang</string>
+    <string name="code_req">Kode barang</string>
+    <string name="item_code_req">Kode barang<font color='#FF0000'>*</font></string>
     <string name="barang">Barang</string>
     <string name="hapus">Hapus</string>
     <string name="delete_question">Hapus barang dari daftar?</string>
-    <string name="tidak">Tidak</string>
-    <string name="iya">Iya</string>
-    <string name="currency_symbol">Rp </string>
+    <string name="no">Tidak</string>
+    <string name="yes">Iya</string>
+    <string name="currency_symbol">Rp</string>
     <string name="edit_item">Edit</string>
     <string name="tambah_barang">Tambahkan Barang Baru</string>
 </resources>
