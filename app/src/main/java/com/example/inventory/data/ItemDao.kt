@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ItemDao {
     //argumen onConflict berfungsi mengabaikan item baru jika kunci utama sudah ada di database
-    //memasukkan item ke database
+    //memasukkan item ke database.
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: Item)
     //memperbarui item
