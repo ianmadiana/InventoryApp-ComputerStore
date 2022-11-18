@@ -37,8 +37,6 @@ class AddItemFragment : Fragment() {
     private val navigationArgs: ItemDetailFragmentArgs by navArgs()
     lateinit var item: Item
 
-//membuat private val viewModel
-// panggil konstruktor InventoryViewModelFactory() lalu teruskan instance ItemDao
     private val viewModel: InventoryViewModel by activityViewModels {
         InventoryViewModelFactory(
             (activity?.application as InventoryApplication).database

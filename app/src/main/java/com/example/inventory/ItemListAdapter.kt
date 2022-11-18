@@ -10,7 +10,6 @@ import com.example.inventory.data.getFormattedPrice
 import com.example.inventory.databinding.ItemListItemBinding
 
 
-//[ListAdapter] digunakan untuk rewcycleview
 class ItemListAdapter(private val onItemClicked: (Item) -> Unit) :
     ListAdapter<Item, ItemListAdapter.ItemViewHolder>(DiffCallback) {
 

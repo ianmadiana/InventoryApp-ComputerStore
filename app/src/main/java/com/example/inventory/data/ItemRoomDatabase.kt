@@ -5,11 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-//class ItemRoomDatabase digunakan sebagai Room database aplikasi
 @Database(entities = [Item::class], version = 1, exportSchema = false)
 abstract class ItemRoomDatabase : RoomDatabase() {
 
-//funtion abstract untuk menampilkan ItemDao
     abstract fun itemDao(): ItemDao
 
     companion object {
@@ -25,7 +23,6 @@ abstract class ItemRoomDatabase : RoomDatabase() {
                     .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
-//                return instance
                 instance
             }
         }

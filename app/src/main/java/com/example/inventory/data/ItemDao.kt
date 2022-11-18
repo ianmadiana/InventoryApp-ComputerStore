@@ -10,22 +10,21 @@ import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 
-//akses objek database ke inventori database.
+// TODO 1: implementasi dari Data Access Object (DAO)
 @Dao
 interface ItemDao {
-//funtion untuk menambahkan item
+    //argumen onConflict berfungsi mengabaikan item baru jika kunci utama sudah ada di database
+    //memasukkan item ke database
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: Item)
-
-//funtion untuk update 1 item
+    //memperbarui item
     @Update
     suspend fun update(item: Item)
-
-//funtion untuk menghapus item
+    //meghapus item
     @Delete
     suspend fun delete(item: Item)
 
-//menambahkan query untuk mengambil data dari database
+    //kueri untuk menampilkan item
     @Query("SELECT * from item WHERE id = :id")
     fun getItem(id: Int): Flow<Item>
 

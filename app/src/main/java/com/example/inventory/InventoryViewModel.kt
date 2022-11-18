@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 
 class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
 
-//  Cache semua item dari database menggunakan LiveData
+//  livedata
     val allItems: LiveData<List<Item>> = itemDao.getItems().asLiveData()
 
     fun isStockAvailable(item: Item): Boolean {
@@ -39,14 +39,11 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         }
     }
 
-    //funtion public yang menggunakan 3 string untuk detail Item.
     fun addNewItem(itemName: String, itemPrice: String, itemCount: String, itemCode: String) {
         val newItem = getNewItemEntry(itemName, itemPrice, itemCount, itemCode)
         insertItem(newItem)
     }
 
-    //funtion private yang berfunbgsi untuk mengambil objek Item
-// dan menambahkan data ke database dengan cara yang tidak memblokir
     private fun insertItem(item: Item) {
         viewModelScope.launch {
             itemDao.insert(item)
@@ -63,12 +60,6 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         return itemDao.getItem(id).asLiveData()
     }
 
-//funtion private yang berfunbgsi untuk mengambil objek Item
-// dan menambahkan data ke database dengan cara yang tidak memblokir
-
-
-
-//funtion private yang menggunakan 3 string dan menampilkan instance Item.
     private fun getNewItemEntry(itemName: String, itemPrice: String, itemCount: String, itemRilis: String): Item {
         return Item(
             itemName = itemName,
@@ -78,7 +69,6 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         )
     }
 
-//funtion public yang menggunakan 3 string untuk detail Item.
     fun isEntryValid(itemName: String, itemPrice: String, itemCount: String, itemCode: String): Boolean {
         if (itemName.isBlank() || itemPrice.isBlank() || itemCount.isBlank() || itemCode.isBlank()) {
             return false
@@ -103,7 +93,6 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
     }
 }
 
-//membuat class InventoryViewModelFactory untuk membuat  instance InventoryViewModel.
 class InventoryViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(InventoryViewModel::class.java)) {
